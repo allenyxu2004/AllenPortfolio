@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical Projects — Allen Xu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<nav>
+    <a href="index.html" class="nav-name">Allen Xu</a>
+    <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="technical.html" class="active">Technical</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="creative.html">Creative</a></li>
+        <li><a href="reels.html">Reels</a></li>
+    </ul>
+</nav>
+
+<div class="page">
+    <header class="page-header">
+        <h1>Technical Projects</h1>
+    </header>
+
+    <section class="content-section">
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <div class="project-slides">
+                    <div class="slide active slide-video">
+                        <iframe src="https://www.youtube.com/embed/nbZP8rG8rf4" title="Gaussian Splatting Streamliner" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="project-card-header">
+                    <h3>Gaussian Splatting Streamliner</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/allenyxu2004/streamline-splatting" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <ul>
+                    <li>Developed a tool that automates frame selection and image alignment when preparing input data for 3D Gaussian Splatting scenes</li>
+                    <li>Packages frame extraction, image alignment, and COLMAP-based exports into a single streamlined pipeline</li>
+                    <li>Implements Reflct's Sharp Frame selection method, improving reconstruction quality for Gaussian Splatting focused imaging</li>
+                    <li>Reduces manual preprocessing time significantly, enabling faster iteration on Gaussian Splatting workflows</li>
+                </ul>
+                <div class="project-stack">
+                    <span>Python</span><span>3DGS</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-slides">
+                    <div class="slide active"><img src="Media/Pacman/Image1.gif" alt="Pac-Man demo" /></div>
+                    <div class="slide"><img src="Media/Pacman/Image2.png" alt="Pac-Man training" /></div>
+                    <div class="slide"><img src="Media/Pacman/Image3.png" alt="Pac-Man results" /></div>
+                    <button class="slide-btn slide-prev">&#8592;</button>
+                    <button class="slide-btn slide-next">&#8594;</button>
+                    <div class="slide-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                <div class="project-card-header">
+                    <h3>Pac-Man Reinforcement Learning</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/allenyxu2004/CS4100_Pac_Man/tree/main" target="_blank">GitHub</a>
+                        <a href="Media/Pacman/Project Report.pdf" target="_blank">Paper</a>
+                    </div>
+                </div>
+                <ul>
+                    <li>Trained a Pac-Man agent using a Double Deep Q-Network (DDQN) with a CNN, learning directly from raw pixel input</li>
+                    <li>Built custom adversarial ghost agents with a single-DQN and FNN predicting across a 16-dimensional action space for all 4 ghosts simultaneously</li>
+                    <li>Integrated CUDA GPU acceleration, achieving a 2× training speedup over CPU-only execution</li>
+                    <li>Tracked agent performance across thousands of episodes via reward curves, episode lengths, and win rates</li>
+                </ul>
+                <p class="project-collab">Collaborators: Luc, Iba, Vishy</p>
+                <div class="project-stack">
+                    <span>Python</span><span>PyTorch</span><span>Gymnasium</span><span>OpenAI ALE</span><span>CUDA</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-slides">
+                    <div class="slide active"><img src="Media/StackUnderflow/image1.png" alt="Stack Underflow screenshot 1" /></div>
+                    <div class="slide"><img src="Media/StackUnderflow/image2.png" alt="Stack Underflow screenshot 2" /></div>
+                    <div class="slide"><img src="Media/StackUnderflow/image3.png" alt="Stack Underflow screenshot 3" /></div>
+                    <div class="slide"><img src="Media/StackUnderflow/image4.png" alt="Stack Underflow screenshot 4" /></div>
+                    <div class="slide"><img src="Media/StackUnderflow/image5.png" alt="Stack Underflow screenshot 5" /></div>
+                    <button class="slide-btn slide-prev">&#8592;</button>
+                    <button class="slide-btn slide-next">&#8594;</button>
+                    <div class="slide-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                <div class="project-card-header">
+                    <h3>Stack Underflow</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/allenyxu2004/StackUnderflow" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <ul>
+                    <li>Extended a Q&amp;A forum into a community-driven hub with support for public and private community creation, membership, and moderation</li>
+                    <li>Integrated OpenAI API for AI-assisted question drafting suggestions and automated response generation to improve engagement</li>
+                    <li>Led UI design and branding end-to-end — produced Figma wireframes, defined visual identity, and implemented all front-end components</li>
+                    <li>Achieved 95% front-end code coverage through comprehensive component, integration, and end-to-end tests</li>
+                </ul>
+                <p class="project-collab">Collaborators: Jacob, Rohil, Will</p>
+                <div class="project-stack">
+                    <span>TypeScript</span><span>React</span><span>NodeJS</span><span>MongoDB</span><span>OpenAPI</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-slides">
+                    <div class="slide active"><img src="Media/TerrainGen/terrainChanges.gif" alt="Terrain generation live changes" /></div>
+                    <div class="slide"><img src="Media/TerrainGen/terrainSimplify.gif" alt="Terrain simplification" /></div>
+                    <div class="slide"><img src="Media/TerrainGen/wireframe.png" alt="Terrain wireframe view" /></div>
+                    <div class="slide"><img src="Media/TerrainGen/highoctave.png" alt="High octave terrain" /></div>
+                    <button class="slide-btn slide-prev">&#8592;</button>
+                    <button class="slide-btn slide-next">&#8594;</button>
+                    <div class="slide-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                <div class="project-card-header">
+                    <h3>Real-Time Terrain Generation</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/allenyxu2004/Real-Time-Terrain-Gen/tree/main" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <ul>
+                    <li>Implemented custom Perlin Noise terrain generation with configurable octaves and persistence for varied landscape detail</li>
+                    <li>Supports real-time live modification of noise parameters with immediate terrain regeneration</li>
+                    <li>Features random seeding mechanics for reproducible terrain generation across sessions</li>
+                    <li>Applies matrix transformations to stabilize rendered scene objects during camera movement and navigation</li>
+                </ul>
+                <div class="project-stack">
+                    <span>C++</span><span>OpenGL</span>
+                </div>
+            </div>
+
+    <footer>
+        <p>© 2025 Allen Xu</p>
+        <div class="footer-links">
+            <a href="mailto:allenyxu2004@gmail.com">Email</a>
+            <a href="https://linkedin.com/in/allenxu2" target="_blank">LinkedIn</a>
+            <a href="https://github.com/" target="_blank">GitHub</a>
+        </div>
+    </footer>
+</div>
+
+<script>
+(function () {
+    let activeNav = null;
+
+    document.querySelectorAll('.project-card').forEach(card => {
+        const slider = card.querySelector('.project-slides');
+        if (!slider) return;
+
+        const slides = [...slider.querySelectorAll('.slide')];
+        const dots = [...slider.querySelectorAll('.dot')];
+        const prevBtn = slider.querySelector('.slide-prev');
+        const nextBtn = slider.querySelector('.slide-next');
+        let idx = 0;
+
+        if (slides.length <= 1) {
+            prevBtn && prevBtn.remove();
+            nextBtn && nextBtn.remove();
+            slider.querySelector('.slide-dots') && slider.querySelector('.slide-dots').remove();
+            return;
+        }
+
+        function go(delta) {
+            slides[idx].classList.remove('active');
+            dots[idx] && dots[idx].classList.remove('active');
+            idx = ((idx + delta) % slides.length + slides.length) % slides.length;
+            slides[idx].classList.add('active');
+            dots[idx] && dots[idx].classList.add('active');
+        }
+
+        prevBtn && prevBtn.addEventListener('click', e => { e.stopPropagation(); go(-1); });
+        nextBtn && nextBtn.addEventListener('click', e => { e.stopPropagation(); go(1); });
+        dots.forEach((d, i) => d.addEventListener('click', () => go(i - idx)));
+
+        card.addEventListener('mouseenter', () => activeNav = go);
+        card.addEventListener('mouseleave', () => { if (activeNav === go) activeNav = null; });
+    });
+
+    document.addEventListener('keydown', e => {
+        if (!activeNav) return;
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); activeNav(-1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); activeNav(1); }
+    });
+})();
+</script>
+</body>
+</html>
