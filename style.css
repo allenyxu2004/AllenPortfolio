@@ -373,6 +373,72 @@ nav {
 
 .dot.active { opacity: 0.65; }
 
+/* WORK */
+.work-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.work-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+}
+
+.work-logo {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    background: var(--tag-bg);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.work-logo-shrink { transform: scale(0.9); }
+
+.work-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.work-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.work-item h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+}
+
+.work-dates {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-transform: uppercase;
+}
+
+.work-stack {
+    font-size: 0.85rem;
+    opacity: 0.65;
+    line-height: 1.6;
+}
+
 /* CREATIVE & REELS */
 .video-grid {
     display: grid;
