@@ -332,27 +332,44 @@ nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(216,219,226,0.88);
-    border: 1px solid var(--rule);
-    color: var(--ink);
-    width: 28px;
-    height: 28px;
-    border-radius: 2px;
+    background: none;
+    border: none;
+    color: #fff;
+    width: 40px;
+    height: 56px;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 0.85rem;
-    line-height: 1;
+    font-size: 0;
+    line-height: 0;
     opacity: 0;
-    transition: opacity 0.2s, color 0.2s, border-color 0.2s;
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.55));
+    transition: opacity 0.2s, color 0.2s;
     z-index: 2;
 }
 
-.project-slides:hover .slide-btn { opacity: 1; }
-.slide-btn:hover { color: var(--accent); border-color: var(--accent); }
-.slide-prev { left: 0.6rem; }
-.slide-next { right: 0.6rem; }
+.slide-btn::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-left: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    border-radius: 1px;
+}
+
+.slide-prev::before { transform: translateX(2px) rotate(45deg); }
+.slide-next::before { transform: translateX(-2px) rotate(-135deg); }
+
+.project-slides:hover .slide-btn { opacity: 0.9; }
+.project-slides .slide-btn:hover { opacity: 1; color: var(--accent); }
+.slide-prev { left: 0.25rem; }
+.slide-next { right: 0.25rem; }
+
+@media (hover: none) {
+    .slide-btn { display: none; }
+}
 
 .slide-dots {
     position: absolute;

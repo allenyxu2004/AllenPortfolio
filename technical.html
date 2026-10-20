@@ -235,6 +235,17 @@
         nextBtn && nextBtn.addEventListener('click', e => { e.stopPropagation(); go(1); });
         dots.forEach((d, i) => d.addEventListener('click', () => go(i - idx)));
 
+        let touchX = 0, touchY = 0;
+        slider.addEventListener('touchstart', e => {
+            touchX = e.changedTouches[0].clientX;
+            touchY = e.changedTouches[0].clientY;
+        }, { passive: true });
+        slider.addEventListener('touchend', e => {
+            const dx = e.changedTouches[0].clientX - touchX;
+            const dy = e.changedTouches[0].clientY - touchY;
+            if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? 1 : -1);
+        }, { passive: true });
+
         card.addEventListener('mouseenter', () => activeNav = go);
         card.addEventListener('mouseleave', () => { if (activeNav === go) activeNav = null; });
     });
