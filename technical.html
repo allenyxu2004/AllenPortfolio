@@ -11,7 +11,7 @@
 </head>
 <body>
 <nav>
-    <a href="index.html" class="nav-name">Allen Xu</a>
+    <a href="index.html" class="nav-name" aria-label="Allen Xu"><span class="nav-full">Allen Xu</span><span class="nav-short" aria-hidden="true">AX</span></a>
     <ul class="nav-links">
         <li><a href="index.html">About</a></li>
         <li><a href="work.html">Work</a></li>
@@ -31,9 +31,7 @@
 
             <div class="project-card">
                 <div class="project-slides">
-                    <div class="slide active slide-video">
-                        <iframe src="https://www.youtube.com/embed/nbZP8rG8rf4" title="Gaussian Splatting Streamliner" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
+                    <div class="slide active"><video src="Media/Splat/SplattingDemo.mp4" autoplay muted loop playsinline controls aria-label="Gaussian Splatting Streamliner demo"></video></div>
                 </div>
                 <div class="project-card-header">
                     <h3>Gaussian Splatting Streamliner</h3>
@@ -81,6 +79,37 @@
                 <p class="project-collab">Collaborators: Luc, Iba, Vishy</p>
                 <div class="project-stack">
                     <span>Python</span><span>PyTorch</span><span>Gymnasium</span><span>OpenAI ALE</span><span>CUDA</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-slides">
+                    <div class="slide active"><img src="Media/NUAero/Logo.jpg" alt="Logo" /></div>
+                    <div class="slide"><video src="Media/NUAero/HotFireGood.mov" muted loop playsinline preload="metadata" aria-label="Hotfire Good"></video></div>
+                    <div class="slide"><video src="Media/NUAero/HotFireBad.mov" muted loop playsinline preload="metadata" aria-label="Hotfire Bad"></video></div>
+                    <div class="slide"><img src="Media/Pacman/Image3.png" alt="Pac-Man results" /></div>
+                    <button class="slide-btn slide-prev">&#8592;</button>
+                    <button class="slide-btn slide-next">&#8594;</button>
+                    <div class="slide-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                <div class="project-card-header">
+                    <h3>Aerospace NU</h3>
+                    <div class="project-links">
+                        <a href="https://www.aerospacenu.com/" target="_blank">Website</a>
+                    </div>
+                </div>
+                <ul>
+                    <li>Part of the Project Redshift effort to fly on a regeneratively cooled bi-propellant engine, using kerosene and LOX</li>
+                    <li>Developed control systems for optimal engine operation, GUI for control operations, and front end visualization of engine data</li>
+                    <li>Worked on the Engine Control Software CI/CD for simulating and verifying changes made by devs and engineers before hardware deployment</li>
+                </ul>
+                <p class="project-collab">Collaborators: Aerospace NU Organization</p>
+                <div class="project-stack">
+                    <span>C++</span><span>Git</span><span>CI/CD</span>
                 </div>
             </div>
 
@@ -190,6 +219,16 @@
             idx = ((idx + delta) % slides.length + slides.length) % slides.length;
             slides[idx].classList.add('active');
             dots[idx] && dots[idx].classList.add('active');
+            syncVideos();
+        }
+
+        function syncVideos() {
+            slides.forEach((s, i) => {
+                const v = s.querySelector('video');
+                if (!v) return;
+                if (i === idx) { v.currentTime = 0; v.play().catch(() => {}); }
+                else v.pause();
+            });
         }
 
         prevBtn && prevBtn.addEventListener('click', e => { e.stopPropagation(); go(-1); });
